@@ -15,7 +15,7 @@ function getAllSongs() {
 }
 
 function getSong(songId) {
-  return SongCollection.findById(songId)
+  return SongCollection.findById({_id: songId})
 }
 
 function addNewSong(newSongObject) {
@@ -23,11 +23,11 @@ function addNewSong(newSongObject) {
 }
 
 function updateSong(songId, updatedSong) {
-  return SongCollection.findByIdAndUpdate(songId, updatedSong)
+  return SongCollection.findByIdAndUpdate({_id: songId}, updatedSong)
 }
 
 function deleteSong(songId) {
-  return SongCollection.findOneAndDelete(songId)
+  return SongCollection.findOneAndDelete({_id: songId})
 }
 
 

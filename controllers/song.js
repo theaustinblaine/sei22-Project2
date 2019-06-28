@@ -16,7 +16,7 @@ songRouter.get('/', (req, res) => {
 })
 
 songRouter.get('/new', (req, res) => {
-  res.render('/songs/newSongForm')
+  res.render('songs/newSongForm')
 })
 
 songRouter.get('/:songId', (req, res) => {
@@ -45,6 +45,13 @@ songRouter.post('/', (req, res) => {
 
 songRouter.put('/:songId', (req, res) => {
   songApi.updateSong(req.params.songId, req.body)
+    .then(() => {
+      res.redirect('/songs')
+    })
+})
+
+songRouter.delete('/:songId', (req, res) => {
+  songApi.deleteSong(req.params.songId)
     .then(() => {
       res.redirect('/songs')
     })
