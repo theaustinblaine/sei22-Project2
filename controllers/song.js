@@ -19,10 +19,20 @@ songRouter.get('/new', (req, res) => {
   res.render('songs/newSongForm')
 })
 
+songRouter.get('/:songId', (req, res) => {
+  songApi.getSong(req.params.songId)
+    .then((song) => {
+      res.render('songs/singleSong', {song})
+    })
+})
+
 songRouter.post('/', (req, res) => {
   songApi.addNewSong(req.body)
     .then(() => {
       res.redirect('/songs')
+    })
+    .catch((err) => {
+      res.send(err)
     })
 })
 
