@@ -12,6 +12,10 @@ writerRouter.get('/', (req, res) => {
     })
 })
 
+writerRouter.get('/new', (req, res) => {
+  res.render('writers/newWriterForm')
+})
+
 
 module.exports = {
   writerRouter
