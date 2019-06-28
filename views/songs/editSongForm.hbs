@@ -1,0 +1,13 @@
+<form method="POST" action="/songs/{{song._id}}?_method=PUT">
+
+  <label for="name">Name:</label>
+  <input type="text" value="{{song.name}}" name="name" />
+
+  <label for="writer">Writer(s):</label>
+  <input type="text"  value="{{song.writer}}" name="writer"  />
+
+  <label for="publisher">Publisher(s):</label>
+  <input type="text" value="{{song.publisher}}" name="publisher"  />
+
+  <input type="submit" value="Update Song" />
+</form>

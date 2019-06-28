@@ -16,13 +16,20 @@ songRouter.get('/', (req, res) => {
 })
 
 songRouter.get('/new', (req, res) => {
-  res.render('songs/newSongForm')
+  res.render('/songs/newSongForm')
 })
 
 songRouter.get('/:songId', (req, res) => {
   songApi.getSong(req.params.songId)
     .then((song) => {
       res.render('songs/singleSong', {song})
+    })
+})
+
+songRouter.get('/:songId/edit', (req, res) => {
+  songApi.getSong(req.params.songId)
+    .then((song) => {
+      res.render('songs/editSongForm', {song})
     })
 })
 
@@ -33,6 +40,13 @@ songRouter.post('/', (req, res) => {
     })
     .catch((err) => {
       res.send(err)
+    })
+})
+
+songRouter.put('/:songId', (req, res) => {
+  songApi.updateSong(req.params.songId, req.body)
+    .then(() => {
+      res.redirect('/songs')
     })
 })
 
