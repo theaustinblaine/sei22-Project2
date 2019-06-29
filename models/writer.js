@@ -14,12 +14,12 @@ function getWriter(writerId) {
   return WriterCollection.findById(writerId)
 }
 
-function addNewWriter(writerObject) {
-  return WriterCollection.create(writerObject)
+function addNewWriter(newWriterObject) {
+  return WriterCollection.create(newWriterObject)
 }
 
-function updateWriter(writerId, newWriterObject) {
-  return WriterCollection.findByIdAndUpdate(writerId, newWriterObject)
+function updateWriter(writerId, updatedWriterObject) {
+  return WriterCollection.findByIdAndUpdate(writerId, updatedWriterObject)
 }
 
 function deleteWriter(writerId) {

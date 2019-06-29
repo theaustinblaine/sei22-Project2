@@ -10,10 +10,23 @@ writerRouter.get('/', (req, res) => {
     .then((writer) => {
       res.render('writers/writers', {writer})
     })
+    .catch((err) => {
+      res.send(err)
+    })
 })
 
 writerRouter.get('/new', (req, res) => {
   res.render('writers/newWriterForm')
+})
+
+writerRouter.post('/', (req, res) => {
+  writerApi.addNewWriter(req.body)
+    .then(() => {
+      res.redirect('/writers')
+    })
+    .catch((err) => {
+      res.send(err)
+    })
 })
 
 

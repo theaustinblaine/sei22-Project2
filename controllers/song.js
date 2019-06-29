@@ -31,6 +31,9 @@ songRouter.get('/:songId/edit', (req, res) => {
     .then((song) => {
       res.render('songs/editSongForm', {song})
     })
+    .catch((err) => {
+      res.send(err)
+    })
 })
 
 songRouter.post('/', (req, res) => {
@@ -48,12 +51,18 @@ songRouter.put('/:songId', (req, res) => {
     .then(() => {
       res.redirect('/songs')
     })
+    .catch((err) => {
+      res.send(err)
+    })
 })
 
 songRouter.delete('/:songId', (req, res) => {
   songApi.deleteSong(req.params.songId)
     .then(() => {
       res.redirect('/songs')
+    })
+    .catch((err) => {
+      res.send(err)
     })
 })
 

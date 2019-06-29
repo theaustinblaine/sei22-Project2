@@ -27,7 +27,7 @@ function updateSong(songId, updatedSong) {
 }
 
 function deleteSong(songId) {
-  return SongCollection.findOneAndDelete({_id: songId})
+  return SongCollection.findByIdAndDelete({_id: songId})
 }
 
 
