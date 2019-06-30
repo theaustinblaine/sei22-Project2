@@ -14,7 +14,7 @@ function getAllWriters() {
 }
 
 function getWriter(writerId) {
-  return WriterCollection.findById(writerId)
+  return WriterCollection.findById({_id: writerId})
 }
 
 function addNewWriter(newWriterObject) {
@@ -22,11 +22,11 @@ function addNewWriter(newWriterObject) {
 }
 
 function updateWriter(writerId, updatedWriterObject) {
-  return WriterCollection.findByIdAndUpdate(writerId, updatedWriterObject)
+  return WriterCollection.findByIdAndUpdate({_id: writerId}, updatedWriterObject)
 }
 
 function deleteWriter(writerId) {
-  return WriterCollection.findByIdAndDelete(writerId)
+  return WriterCollection.findByIdAndDelete({_id: writerId})
 }
 
 

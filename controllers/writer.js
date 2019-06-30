@@ -29,6 +29,10 @@ writerRouter.get('/:writerId', (req, res) => {
     })
 })
 
+writerRouter.get('/:writerId/edit', (req, res) => {
+  res.render('writers/editWriterForm')
+})
+
 writerRouter.post('/', (req, res) => {
   writerApi.addNewWriter(req.body)
     .then(() => {
@@ -36,6 +40,13 @@ writerRouter.post('/', (req, res) => {
     })
     .catch((err) => {
       res.send(err)
+    })
+})
+
+writerRouter.put('/:writerId', (req, res) => {
+  writerApi.updateWriter(req.params.writerId, req.body)
+    .then(() => {
+      res.redirect('/writers')
     })
 })
 
