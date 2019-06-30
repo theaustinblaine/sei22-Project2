@@ -1,7 +1,10 @@
 const mongoose = require('./connection.js')
 
 const WriterSchema = new mongoose.Schema({
- name: String
+ name: {
+   type: String,
+   required: true
+ }
 })
 
 const WriterCollection = mongoose.model('Writer', WriterSchema)

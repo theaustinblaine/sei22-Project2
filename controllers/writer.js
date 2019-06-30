@@ -24,10 +24,23 @@ writerRouter.get('/:writerId', (req, res) => {
     .then((writer) => {
       res.render('writers/singleWriter', {writer})
     })
+    .catch((err) => {
+      res.send(err)
+    })
 })
 
 writerRouter.post('/', (req, res) => {
   writerApi.addNewWriter(req.body)
+    .then(() => {
+      res.redirect('/writers')
+    })
+    .catch((err) => {
+      res.send(err)
+    })
+})
+
+writerRouter.delete('/:writerId', (req, res) => {
+  writerApi.deleteWriter(req.params.writerId)
     .then(() => {
       res.redirect('/writers')
     })
