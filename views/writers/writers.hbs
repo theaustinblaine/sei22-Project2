@@ -2,9 +2,9 @@
 
 <a href="writers/new">Add New Writer</a>
 
-{{#each writer}}
+{{#each writers}}
     <div>
-        {{name}}
+        <a href="writers/{{_id}}">{{name}}</a>
         {{_id}}
     </div>
 {{/each}}

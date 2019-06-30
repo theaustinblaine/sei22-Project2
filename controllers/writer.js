@@ -7,8 +7,8 @@ const writerRouter = express.Router()
 
 writerRouter.get('/', (req, res) => {
   writerApi.getAllWriters()
-    .then((writer) => {
-      res.render('writers/writers', {writer})
+    .then((writers) => {
+      res.render('writers/writers', {writers})
     })
     .catch((err) => {
       res.send(err)
@@ -17,6 +17,13 @@ writerRouter.get('/', (req, res) => {
 
 writerRouter.get('/new', (req, res) => {
   res.render('writers/newWriterForm')
+})
+
+writerRouter.get('/:writerId', (req, res) => {
+  writerApi.getWriter(req.params.writerId)
+    .then((writer) => {
+      res.render('writers/singleWriter', {writer})
+    })
 })
 
 writerRouter.post('/', (req, res) => {
