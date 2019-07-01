@@ -9,6 +9,7 @@ const methodOverride = require('method-override')
  */
 const { songRouter } = require('./controllers/song.js')
 const { writerRouter } = require('./controllers/writer.js')
+const { publisherRouter } = require('./controllers/publisher.js')
 
 
 app.use(express.urlencoded({extended: true}))
@@ -34,6 +35,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/songs', songRouter)
 app.use('/writers', writerRouter)
+app.use('/publishers', publisherRouter)
 
 const PORT = process.env.PORT || 3000 
 

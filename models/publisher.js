@@ -1,7 +1,10 @@
 const mongoose = require('./connection.js')
 
 const PublisherSchema = new mongoose.Schema({
- name: String
+ name: {
+   type: String,
+   required: true
+ }
 })
 
 const PublisherCollection = mongoose.model('Publisher', PublisherSchema)
