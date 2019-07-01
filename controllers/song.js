@@ -18,7 +18,13 @@ songRouter.get('/', (req, res) => {
 })
 
 songRouter.get('/new', (req, res) => {
-  res.render('songs/newSongForm')
+  writerApi.getAllWriters()
+    .then((writers,) => {
+      publisherApi.getAllPublishers()
+        .then((publishers) => {
+          res.render('songs/newSongForm', {writers, publishers})
+        })
+    })
 })
 
 songRouter.get('/:songId', (req, res) => {

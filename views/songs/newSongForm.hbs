@@ -1,21 +1,38 @@
 <form method="POST" action="/songs">
+<h2>
+  Create New Song Listing
+</h2>
+
   <input type="text" value="{{name}}" placeholder="title" name="name" />
 
-  <input type="text" name="writer" placeholder="writer" />
+  {{!-- <input type="text" name="writer" placeholder="writer" /> --}}
 
   <div class="form-group">
-    <label for="writerSelect">Writer select</label>
+    <label for="writerSelect">Writer:</label>
     <select class="form-control" id="writerSelect">
       {{#each writers}}
-        <option>
-            <a href="{{_id}}">{{name}}</a>
+        <option value="{{_id}}">
+            {{name}}
         </option>
       {{/each}}
     </select>
   </div>
 
-  <input type="text" name="publisher" placeholder="publisher" />
+  <p>Don't see your writer? Click <a href="/writers/new">HERE</a> to create a new Writer Listing</p>
 
+  {{!-- <input type="text" name="publisher" placeholder="publisher" /> --}}
+
+  <div class="form-group">
+    <label for="publisherSelect">Publisher:</label>
+    <select class="form-control" id="publisherSelect">
+      {{#each publishers}}
+        <option value="{{_id}}">
+            {{name}}
+        </option>
+      {{/each}}
+    </select>
+  </div>
+  <p>Don't see your publisher? Click <a href="/publishers/new">HERE</a> to create a new publisher Listing</p>
 
   <input type="submit" value="Create Song" />
 </form>
