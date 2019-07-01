@@ -39,6 +39,16 @@ publisherRouter.post('/', (req, res) => {
     })
 })
 
+publisherRouter.delete('/:publisherId', (req, res) => {
+  publisherApi.deletePublisher(req.params.publisherId)
+    .then(() => {
+      res.redirect('/publishers')
+    })
+    .catch((err) => {
+      res.send(err)
+    })
+})
+
 
 module.exports = {
   publisherRouter
