@@ -48,6 +48,9 @@ writerRouter.put('/:writerId', (req, res) => {
     .then(() => {
       res.redirect('/writers')
     })
+    .catch((err) => {
+      res.send(err)
+    })
 })
 
 writerRouter.delete('/:writerId', (req, res) => {
