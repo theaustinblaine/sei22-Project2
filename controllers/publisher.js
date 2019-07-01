@@ -15,6 +15,10 @@ publisherRouter.get('/', (req, res) => {
     })
 })
 
+publisherRouter.get('/new', (req, res) => {
+  res.render('publishers/newPublisherForm')
+})
+
 
 module.exports = {
   publisherRouter
