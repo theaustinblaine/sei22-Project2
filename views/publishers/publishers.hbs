@@ -1,10 +1,21 @@
-<h1>Viewing All Publishers</h1>
+<div class="main container">
+    <h2>Viewing All Publishers</h2>
 
-<a href="publishers/new">Add New Publisher</a>
+    <a href="publishers/new">Add New Publisher</a>
 
-{{#each publishers}}
+
     <div>
-        <a href="publishers/{{_id}}">{{name}}</a>
-        {{_id}}
+        <table style="width:100%">
+            <tr>
+                <th>Publisher</th>
+                <th>ID</th>
+            </tr>
+        {{#each publishers}}
+            <tr>
+                <td><a href="publishers/{{_id}}">{{name}}</a></td>
+                <td>{{_id}}</td>
+            </tr>
+        {{/each}}
+        </table>
     </div>
-{{/each}}
+</div>

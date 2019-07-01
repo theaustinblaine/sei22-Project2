@@ -1,7 +1,12 @@
-<form method="POST" action="/publishers">
+<div class="container">
+  <form method="POST" action="/publishers">
+    <h2 class="form-header">Add New Publisher</h2>
+    
+    <div class="form-group">
+      <label for="publisherName">Writer Name:</label>
+      <input type="text" class="form-control" id="publisherName"  placeholder="Name">
+    </div>
 
-  <label for="name">Publisher Name:</label>
-  <input type="text" placeholder="name" name="name" />
-
-  <input type="submit" value="Add New Publisher" />
-</form>
+    <input type="submit" value="Add New Publisher" />
+  </form>
+</div>

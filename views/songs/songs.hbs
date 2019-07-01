@@ -1,12 +1,23 @@
-<h1>All Songs</h1>
+<div class="main container">
+        <h2>Viewing All Songs</h2>
+        <a href="songs/new">List a New Song</a>
 
-<a href="songs/new">List a New Song</a>
-
-{{#each songs}}
     <div>
-        <a href="/songs/{{_id}}">{{name}}</a>
-        {{writer}}
-        {{publisher}}
-        {{_id}}
+        <table style="width:100%">
+            <tr>
+                <th>Song Name</th>
+                <th>Writer</th> 
+                <th>Publisher</th>
+                <th>Listing ID</th>
+            </tr>
+        {{#each songs}}
+            <tr>
+                <td><a href="/songs/{{_id}}">{{name}}</a></td>
+                <td>{{writer}}</td>
+                <td>{{publisher}}</td>
+                <td>{{_id}}</td>
+            </tr>
+        {{/each}}
+        </table>
     </div>
-{{/each}}
+</div>

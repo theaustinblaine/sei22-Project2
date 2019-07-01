@@ -1,7 +1,12 @@
-<form method="POST" action="/writers">
+<div class="container">
+  <form method="POST" action="/writers">
+    <h2 class="form-header">Add New Writer</h2>
+    
+    <div class="form-group">
+      <label for="writerName">Writer Name:</label>
+      <input type="text" class="form-control" id="writerName"  placeholder="Name">
+    </div>
 
-  <label for="name">Writer Name:</label>
-  <input type="text" placeholder="name" name="name" />
-
-  <input type="submit" value="Add New Writer" />
-</form>
+    <input type="submit" value="Add New Writer" />
+  </form>
+</div>

@@ -1,10 +1,20 @@
-<h1>Viewing All Writers</h1>
+<div class="main container">
+<h2>Viewing All Writers</h2>
 
 <a href="writers/new">Add New Writer</a>
 
-{{#each writers}}
     <div>
-        <a href="writers/{{_id}}">{{name}}</a>
-        {{_id}}
+        <table style="width:100%">
+            <tr>
+                <th>Writer</th>
+                <th>ID</th>
+            </tr>
+        {{#each writers}}
+            <tr>
+                <td><a href="writers/{{_id}}">{{name}}</a></td>
+                <td>{{_id}}</td>
+            </tr>
+     {{/each}}
+        </table>
     </div>
-{{/each}}
+</div>
