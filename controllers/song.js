@@ -1,6 +1,8 @@
 const express = require('express')
 
 const songApi = require('../models/song.js')
+const writerApi = require('../models/writer.js')
+const publisherApi = require('../models/publisher.js')
 
 const songRouter = express.Router()
 

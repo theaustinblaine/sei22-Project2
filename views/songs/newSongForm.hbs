@@ -3,7 +3,19 @@
 
   <input type="text" name="writer" placeholder="writer" />
 
+  <div class="form-group">
+    <label for="writerSelect">Writer select</label>
+    <select class="form-control" id="writerSelect">
+      {{#each writers}}
+        <option>
+            <a href="{{_id}}">{{name}}</a>
+        </option>
+      {{/each}}
+    </select>
+  </div>
+
   <input type="text" name="publisher" placeholder="publisher" />
+
 
   <input type="submit" value="Create Song" />
 </form>

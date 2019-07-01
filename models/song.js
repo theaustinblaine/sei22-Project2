@@ -3,7 +3,7 @@ const mongoose = require('./connection.js')
 
 const SongSchema = new mongoose.Schema({
  name: String,
- writer: String,
+ writer: mongoose.Types.ObjectId,
  publisher: String
 })
 
