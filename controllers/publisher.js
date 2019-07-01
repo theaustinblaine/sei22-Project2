@@ -19,10 +19,23 @@ publisherRouter.get('/new', (req, res) => {
   res.render('publishers/newPublisherForm')
 })
 
+publisherRouter.get('/:publisherId', (req, res) => {
+  publisherApi.getPublisher(req.params.publisherId)
+    .then((publisher) => {
+      res.render('publishers/singlePublisher', {publisher})
+    })
+    .catch((err) => {
+      res.send(err)
+    })
+})
+
 publisherRouter.post('/', (req, res) => {
   publisherApi.addNewPublisher(req.body)
     .then(() => {
       res.redirect('/publishers')
+    })
+    .catch((err) => {
+      res.send(err)
     })
 })
 
