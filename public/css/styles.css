@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 200px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start; 
+}
+
+.logo{
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+h3{
+    font-size: 38px;
+    padding: 2px;
+}
+
+.components {
+    font-size: 30px;
+    text-align: center;
+    padding-left: 0;
+}
+
+.content {
+    display: 
+    /* width: 100%;
+    position: fixed; */
+}

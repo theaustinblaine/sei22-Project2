@@ -8,18 +8,39 @@
 <head>
     <meta charset="utf-8">
     <title>GA-SCAP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
 </head>
-<body>
-  <a href="/songs">Songs</a>
-  <a href="/writers">Writers</a>
-  <a href="/publishers">Publishers</a>
 
+<body>
+  <div class="wrapper">
+    <nav id="sidebar" class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/songs">
+        <div class="logo">
+          <img src="images/ga-logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="LOGO"> <h3>SCAP</h3>
+        </div>
+      </a>
+      <ul class="list-unstyled components">
+        <li>
+          <a class="nav-item nav-link active" href="/songs">Songs</a>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="/writers">Writers</a>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="/publishers">Publishers</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content">
     <!--
       This is a place holder for the contents of the .hbs file that is
       rendered.
     -->
     {{{body}}}
+  </div>
 
 </body>
 </html>
