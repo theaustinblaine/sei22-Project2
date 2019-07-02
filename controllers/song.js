@@ -19,7 +19,7 @@ songRouter.get('/', (req, res) => {
 
 songRouter.get('/new', (req, res) => {
   writerApi.getAllWriters()
-    .then((writers,) => {
+    .then((writers) => {
       publisherApi.getAllPublishers()
         .then((publishers) => {
           res.render('songs/newSongForm', {writers, publishers})
@@ -37,7 +37,13 @@ songRouter.get('/:songId', (req, res) => {
 songRouter.get('/:songId/edit', (req, res) => {
   songApi.getSong(req.params.songId)
     .then((song) => {
-      res.render('songs/editSongForm', {song})
+      writerApi.getAllWriters()
+        .then((writers) => {
+          publisherApi.getAllPublishers()
+            .then((publishers) => {
+              res.render('songs/editSongForm', {song, writers, publishers})
+            })
+        })
     })
     .catch((err) => {
       res.send(err)

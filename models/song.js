@@ -34,6 +34,7 @@ function getSong(songId) {
 
 function getSongByWriterId(writerId) {
   return SongCollection.find({writer: writerId})
+  
 }
 
 function getSongByPublisherId(publisherId) {
