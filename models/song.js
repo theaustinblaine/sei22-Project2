@@ -6,15 +6,24 @@ const SongSchema = new mongoose.Schema({
    type: String,
    required: true
  },
- writer: mongoose.Types.ObjectId,
- publisher: mongoose.Types.ObjectId
+ writer: {
+   type: mongoose.Types.ObjectId,
+   ref: 'Writer'
+ },
+ publisher: {
+   type: mongoose.Types.ObjectId,
+   ref: 'Publisher'
+ }
 })
 
 const SongCollection = mongoose.model('Song', SongSchema)
 
 
 function getAllSongs() {
-  return SongCollection.find()
+  return SongCollection
+  .find()
+  .populate("publisher")
+  .populate("writer")
 }
 
 function getSong(songId) {

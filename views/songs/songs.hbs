@@ -13,8 +13,8 @@
         {{#each songs}}
             <tr>
                 <td><a href="/songs/{{_id}}">{{name}}</a></td>
-                <td>{{writer}}</td>
-                <td>{{publisher}}</td>
+                <td>{{writer.name}}</td>
+                <td>{{publisher.name}}</td>
                 <td>{{_id}}</td>
             </tr>
         {{/each}}
