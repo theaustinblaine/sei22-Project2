@@ -34,7 +34,7 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.get('/', (req, res) => {
-    res.redirect('/shops')
+    res.redirect('/songs')
 })
 app.use('/songs', songRouter)
 app.use('/writers', writerRouter)
