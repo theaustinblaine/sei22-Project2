@@ -1,14 +1,43 @@
-<form method="POST" action="/songs/{{song._id}}?_method=PUT">
+<div class="container">
+  <form method="POST" action="/songs/{{song._id}}?_method=PUT">
 
-  <label for="name">Name:</label>
-  <input type="text" value="{{song.name}}" name="name" />
+    <h2 class="form-header">
+      Edit Song
+    </h2>
 
-  <label for="writer">Writer(s):</label>
-  <input type="text"  value="{{song.writer}}" name="writer"  />
+    <div class="form-group">
+      <label for="song">Song Name:</label>
+      <input type="text" class="form-control" id="song"  name="name" value="{{song.name}}"">
+    </div>
 
-  <label for="publisher">Publisher(s):</label>
-  <input type="text" value="{{song.publisher}}" name="publisher"  />
+    <div class="form-group">
+      <label for="writer">Writer:</label>
+      <select class="form-control" id="writer" name="writer">
+        {{#each writers}}
+          <option value="{{_id}}">
+              {{name}}
+          </option>
+        {{/each}}
+      </select>
+    <small>Don't see your writer? Click <a href="/writers/new">HERE</a> to create a new Writer Listing</small>
+    </div>
 
-  <input type="submit" value="Update Song" />
+    <div class="form-group">
+      <label for="publisher">Publisher:</label>
+      <select class="form-control" id="publisher" name="publisher">
+        {{#each publishers}}
+          <option value="{{_id}}">
+              {{name}}
+          </option>
+        {{/each}}
+      </select>
+    <small>Don't see your publisher? Click <a href="/publishers/new">HERE</a> to create a new publisher Listing</small>
+    </div>
 
-</form>
+    <div class="form-group">
+      <input type="submit" value="Update Song" />
+      {{!-- <button type="button submit" class="btn btn-secondary btn-lg">Create Song</button> --}}
+    </div>
+
+  </form>
+</div>
