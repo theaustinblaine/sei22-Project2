@@ -4,7 +4,7 @@
 
 * [Project Board](https://trello.com/b/EnejcSe9/sei22-project-2)
 
-* Deployed App
+* [Deployed App](https://shrouded-stream-94500.herokuapp.com/)
 
 ## ERD:
 
