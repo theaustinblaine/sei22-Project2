@@ -28,6 +28,8 @@ function getAllSongs() {
 
 function getSong(songId) {
   return SongCollection.findById({_id: songId})
+  .populate("publisher")
+  .populate("writer")
 }
 
 function getSongByWriterId(writerId) {

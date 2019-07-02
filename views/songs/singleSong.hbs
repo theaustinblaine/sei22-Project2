@@ -2,10 +2,10 @@
   <h2>Viewing {{song.name}}</h2>
 
   <div>
-      Writer(s): {{song.writer}}
+      Writer: {{song.writer.name}}
   </div>
   <div>
-      Publisher(s): {{song.publisher}}
+      Publisher: {{song.publisher.name}}
   </div>
 
   <a href="/songs/{{song._id}}/edit">Edit Song</a>
