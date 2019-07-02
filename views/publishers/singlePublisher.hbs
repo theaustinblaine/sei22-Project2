@@ -2,9 +2,12 @@
   <h2>Viewing {{publisher.name}}</h2>
   {{!-- <a href="/publishers/{{publishers._id}}/edit">Edit Publisher</a> --}}
 
-  <div>
-      Songs: 1, 2, 3, 4, 5, etc...
-  </div>
+  <ul>
+      <li>Something</li>
+      {{#each song}}
+        <li>{{name}}</li>
+      {{/each}}
+  </ul>
 
   <a href="/publishers">Back to Main</a>
   

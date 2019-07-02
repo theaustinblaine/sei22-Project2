@@ -2,9 +2,12 @@
   <h2>Viewing {{writer.name}}</h2>
   {{!-- <a href="/writers/{{writer._id}}/edit">Edit Writer</a> --}}
 
-  <div>
-      Songs: 1, 2, 3, 4, 5, etc...
-  </div>
+  <ul>
+      <li>Something</li>
+      {{#each song}}
+        <li>{{name}}</li>
+      {{/each}}
+  </ul>
 
   <a href="/writers">Back to Main</a>
 

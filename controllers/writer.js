@@ -24,7 +24,10 @@ writerRouter.get('/new', (req, res) => {
 writerRouter.get('/:writerId', (req, res) => {
   writerApi.getWriter(req.params.writerId)
     .then((writer) => {
-      res.render('writers/singleWriter', {writer})
+      songApi.getSongByWriterId(writer._id)
+        .then((song) => {
+          res.render('writers/singleWriter', {writer, song})
+        })
     })
     .catch((err) => {
       res.send(err)

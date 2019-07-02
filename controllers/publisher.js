@@ -24,7 +24,10 @@ publisherRouter.get('/new', (req, res) => {
 publisherRouter.get('/:publisherId', (req, res) => {
   publisherApi.getPublisher(req.params.publisherId)
     .then((publisher) => {
-      res.render('publishers/singlePublisher', {publisher})
+      songApi.getSongByPublisherId(publisher._id)
+        .then((song) => {
+          res.render('publishers/singlePublisher', {publisher, song})
+        })
     })
     .catch((err) => {
       res.send(err)

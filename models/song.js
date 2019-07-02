@@ -7,7 +7,7 @@ const SongSchema = new mongoose.Schema({
    required: true
  },
  writer: mongoose.Types.ObjectId,
- publisher: String
+ publisher: mongoose.Types.ObjectId
 })
 
 const SongCollection = mongoose.model('Song', SongSchema)
@@ -19,6 +19,14 @@ function getAllSongs() {
 
 function getSong(songId) {
   return SongCollection.findById({_id: songId})
+}
+
+function getSongByWriterId(writerId) {
+  return SongCollection.find({writer: writerId})
+}
+
+function getSongByPublisherId(publisherId) {
+  return SongCollection.find({publisher: publisherId})
 }
 
 function addNewSong(newSongObject) {
@@ -37,6 +45,8 @@ function deleteSong(songId) {
 module.exports = {
   getAllSongs,
   getSong,
+  getSongByWriterId,
+  getSongByPublisherId,
   addNewSong,
   updateSong,
   deleteSong
