@@ -1,14 +1,16 @@
-<h1>Viewing {{song.name}}</h1>
+<div class="main container">
+  <h2>Viewing {{song.name}}</h2>
 
-<div>
-    Writer(s): {{song.writer}}
+  <div>
+      Writer(s): {{song.writer}}
+  </div>
+  <div>
+      Publisher(s): {{song.publisher}}
+  </div>
+
+  <a href="/songs/{{song._id}}/edit">Edit Song</a>
+
+  <form method="POST" action="/songs/{{song._id}}?_method=DELETE">
+    <input type="submit" value="Delete" />
+  </form>
 </div>
-<div>
-    Publisher(s): {{song.publisher}}
-</div>
-
-<a href="/songs/{{song._id}}/edit">Edit Song</a>
-
-<form method="POST" action="/songs/{{song._id}}?_method=DELETE">
-  <input type="submit" value="Delete" />
-</form>

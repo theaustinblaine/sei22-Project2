@@ -1,12 +1,15 @@
-<h1>Viewing {{publisher.name}}</h1>
+<div class="main container">
+  <h2>Viewing {{publisher.name}}</h2>
+  {{!-- <a href="/publishers/{{publishers._id}}/edit">Edit Publisher</a> --}}
 
-<div>
-    Songs: 1, 2, 3, 4, 5, etc...
+  <div>
+      Songs: 1, 2, 3, 4, 5, etc...
+  </div>
+
+  <a href="/publishers">Back to Main</a>
+  
+
+  <form method="POST" action="/publishers/{{publisher._id}}?_method=DELETE">
+    <input type="submit" value="Delete" />
+  </form>
 </div>
-
-<a href="/publishers">Back to Main</a>
-{{!-- <a href="/publishers/{{publishers._id}}/edit">Edit Publisher</a> --}}
-
-<form method="POST" action="/publishers/{{publisher._id}}?_method=DELETE">
-  <input type="submit" value="Delete" />
-</form>
