@@ -64,3 +64,8 @@ h2 {
     text-decoration: underline;
     font-size: 48px;
 }
+
+th {
+    width: 150px;
+    text-decoration: underline;
+}
