@@ -4,17 +4,24 @@
 }
 
 #sidebar {
-    width: 200px;
+    width: 250px;
     position: fixed;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: start; 
+    align-items: center;
+}
+
+.navbar-brand{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 0 0;
 }
 
 .components {
     list-style: none;
-    padding-left: 0px;
 }
 
 .logo{
@@ -45,7 +52,6 @@ h3{
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    /* border: green 4px solid; */
 }
 
 .form-header {
@@ -64,7 +70,6 @@ h3{
     justify-content: start;
     align-items: center;
     margin: 50px auto;
-    /* border: 5px green solid; */
 }
 
 .page-data {
@@ -73,13 +78,9 @@ h3{
     border: gray 3px solid;
     border-radius: 15px;
     background: rgba(225, 223, 223, .7);
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
 }
 
 .buttons {
-    /* border: 3px green solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
