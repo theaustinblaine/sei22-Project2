@@ -1,17 +1,26 @@
 <div class="main container">
   <h2>Viewing {{song.name}}</h2>
-  <div >
-    <div>
-        Writer: {{song.writer.name}}
-    </div>
-    <div>
-        Publisher: {{song.publisher.name}}
-    </div>
+  <div class="page-data">
 
-    <a href="/songs/{{song._id}}/edit">Edit Song</a>
+    <table>
+    <tr>
+        <th>Writer</th>
+        <th>Publisher</th>
+        <th>Song ID</th>
+    </tr>
+    <tr>
+        <td>{{song.writer.name}}</td>
+        <td>{{song.publisher.name}}</td>
+        <td>{{song._id}}</td>
+    </tr>
+    </table>
 
-    <form method="POST" action="/songs/{{song._id}}?_method=DELETE">
-      <input type="submit" value="Delete" />
-    </form>
+    <div class="buttons">
+      <a href="/songs/{{song._id}}/edit">Edit Song</a>
+
+      <form method="POST" action="/songs/{{song._id}}?_method=DELETE">
+        <input type="submit" value="Delete" />
+      </form>
+    </div>
   </div>
 </div>

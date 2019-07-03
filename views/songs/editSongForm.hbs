@@ -5,39 +5,41 @@
       Edit Song
     </h2>
 
-    <div class="form-group">
-      <label for="song">Song Name:</label>
-      <input type="text" class="form-control" id="song"  name="name" value="{{song.name}}">
-    </div>
+    <div class="page-data">
+      <div class="form-group">
+        <label for="song">Song Name:</label>
+        <input type="text" class="form-control" id="song"  name="name" value="{{song.name}}">
+      </div>
 
-    <div class="form-group">
-      <label for="writer">Writer:</label>
-      <select class="form-control" id="writer" name="writer">
-        {{#each writers}}
-          <option value="{{_id}}">
-              {{name}}
-          </option>
-        {{/each}}
-      </select>
-    <small>Don't see your writer? Click <a href="/writers/new">HERE</a> to create a new Writer Listing</small>
-    </div>
+      <div class="form-group">
+        <label for="writer">Writer:</label>
+        <select class="form-control" id="writer" name="writer">
+          {{#each writers}}
+            <option value="{{_id}}">
+                {{name}}
+            </option>
+          {{/each}}
+        </select>
+        <small>Don't see your writer? Click <a href="/writers/new">HERE</a> to create a new Writer Listing</small>
+      </div>
 
-    <div class="form-group">
-      <label for="publisher">Publisher:</label>
-      <select class="form-control" id="publisher" name="publisher">
-        {{#each publishers}}
-          <option value="{{_id}}">
-              {{name}}
-          </option>
-        {{/each}}
-      </select>
-    <small>Don't see your publisher? Click <a href="/publishers/new">HERE</a> to create a new publisher Listing</small>
-    </div>
+      <div class="form-group">
+        <label for="publisher">Publisher:</label>
+        <select class="form-control" id="publisher" name="publisher">
+          {{#each publishers}}
+            <option value="{{_id}}">
+                {{name}}
+            </option>
+          {{/each}}
+        </select>
+        <small>Don't see your publisher? Click <a href="/publishers/new">HERE</a> to create a new publisher Listing</small>
+      </div>
 
-    <div class="form-group">
-      <input type="submit" value="Update Song" />
-      {{!-- <button type="button submit" class="btn btn-secondary btn-lg">Create Song</button> --}}
+      <div class="buttons">
+        <div class="form-group">
+          <input type="submit" value="Update Song" />
+        </div>
+      </div>
     </div>
-
   </form>
 </div>
