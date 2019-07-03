@@ -13,6 +13,7 @@
     <div class="form-group">
       <label for="writer">Writer:</label>
       <select class="form-control" id="writer" name="writer">
+          {{!-- <option value="select" disabled>Please Select A Writer</option> --}}
         {{#each writers}}
           <option value="{{_id}}">
               {{name}}

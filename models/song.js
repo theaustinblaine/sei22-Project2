@@ -34,11 +34,12 @@ function getSong(songId) {
 
 function getSongByWriterId(writerId) {
   return SongCollection.find({writer: writerId})
-  
+  .populate("publisher")
 }
 
 function getSongByPublisherId(publisherId) {
   return SongCollection.find({publisher: publisherId})
+  .populate("writer")
 }
 
 function addNewSong(newSongObject) {

@@ -1,5 +1,5 @@
 <div class="main container">
-  <h2>Viewing {{publisher.name}}</h2>
+  <h2>Viewing Publisher: {{publisher.name}}</h2>
   {{!-- <a href="/publishers/{{publishers._id}}/edit">Edit Publisher</a> --}}
 
   <div>
@@ -11,7 +11,7 @@
     {{#each song}}
       <tr>
             <td>{{name}}</td>
-            <td>Writer Name</td>
+            <td>{{writer.name}}</td>
       </tr>
     {{/each}}
     </table>
