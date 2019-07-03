@@ -13,7 +13,7 @@
 
       <div class="form-group">
         <label for="writer">Writer:</label>
-        <select class="form-control" id="writer" name="writer">
+        <select class="form-control" id="writer" name="writer" data-selected="{{song.writer._id}}">
           {{#each writers}}
             <option value="{{_id}}">
                 {{name}}
@@ -25,7 +25,7 @@
 
       <div class="form-group">
         <label for="publisher">Publisher:</label>
-        <select class="form-control" id="publisher" name="publisher">
+        <select class="form-control" id="publisher" name="publisher" data-selected="{{song.publisher._id}}">
           {{#each publishers}}
             <option value="{{_id}}">
                 {{name}}
@@ -43,3 +43,26 @@
     </div>
   </form>
 </div>
+
+<script>
+  const publisher = document.getElementById('publisher')
+  const publisherId = publisher.dataset.selected
+  const publisherOptions = document.querySelectorAll('#publisher option')
+
+  publisherOptions.forEach((option) => {
+    if(publisherId === option.value) {
+      option.setAttribute('selected', true)
+    }
+  })
+
+  const writer = document.getElementById('writer')
+  const writerId = writer.dataset.selected
+  const writerOptions = document.querySelectorAll('#writer option')
+
+  writerOptions.forEach((option) => {
+    if(writerId === option.value) {
+      option.setAttribute('selected', true)
+    }
+  })
+
+</script>
