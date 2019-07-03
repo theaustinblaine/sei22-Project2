@@ -12,6 +12,11 @@
     justify-content: start; 
 }
 
+.components {
+    list-style: none;
+    padding-left: 0px;
+}
+
 .logo{
     width: 170px;
     display: flex;
@@ -58,6 +63,16 @@ h3{
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    margin: 50px auto;
+    /* border: 5px green solid; */
+}
+
+.page-data {
+    margin: 35px auto;
+    padding: 10px 30px;
+    border: gray 3px solid;
+    border-radius: 15px;
+    background: rgba(225, 223, 223, .7);
 }
 
 h2 {
